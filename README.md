@@ -1,1 +1,1 @@
-# Domain-.lo
+.lo
