@@ -3,243 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominio .lo - DNS Libre para Jóvenes</title>
+    <title>Especificación Oficial - Dominio .lo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
         
         body {
-            background-color: #f6f6f6;
-            font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-            color: #202122;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f7;
+            color: #1a1a1a;
         }
-        .wiki-container {
-            max-width: 1200px;
-            margin: 0 auto;
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .dot {
+            color: #e11d48; /* Rojo vibrante */
+            margin-right: 2px;
+        }
+
+        .text-lo {
+            color: #000000; /* Negro sólido */
+        }
+
+        .document-card {
             background: white;
-            border: 1px solid #a7d7f9;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border-top: 8px solid #e11d48;
         }
-        .wiki-sidebar {
-            width: 176px;
-            font-family: sans-serif;
-            font-size: 0.75rem;
-            background-color: #f6f6f6;
-        }
-        .wiki-content {
-            padding: 1.5rem 2.5rem;
-            border-left: 1px solid #a7d7f9;
-        }
-        .infobox {
-            width: 300px;
-            border: 1px solid #a2a9b1;
-            background-color: #f8f9fa;
-            font-family: sans-serif;
-            font-size: 0.8rem;
-            float: right;
-            margin-left: 1rem;
-            margin-bottom: 1rem;
-        }
-        h1, h2 {
-            font-family: 'Libre Baskerville', serif;
-            border-bottom: 1px solid #a2a9b1;
-            margin-bottom: 0.5rem;
-            margin-top: 1.5rem;
-            font-weight: normal;
-        }
-        .brand-dot {
-            color: #ff0000;
-        }
-        .brand-text {
-            color: #000000;
-        }
-        .btn-register {
-            background-color: #000000;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            display: inline-block;
-            font-family: sans-serif;
-            border: 2px solid #ff0000;
-        }
-        .btn-register:hover {
-            background-color: #ff0000;
-            color: white;
-        }
-        .toc {
-            border: 1px solid #a2a9b1;
-            background-color: #f8f9fa;
-            padding: 10px;
-            display: inline-block;
-            font-size: 0.85rem;
-            margin: 1rem 0;
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 8rem;
+            opacity: 0.03;
+            pointer-events: none;
+            white-space: nowrap;
+            font-weight: 900;
         }
     </style>
 </head>
-<body>
+<body class="p-4 md:p-10">
 
-<div class="flex wiki-container min-h-screen">
-    <!-- Navegación lateral -->
-    <aside class="wiki-sidebar p-4 hidden md:block">
-        <div class="mb-10 flex flex-col items-center">
-            <div class="text-3xl font-bold tracking-tighter">
-                <span class="brand-text">lo</span><span class="brand-dot text-4xl">.</span>
-            </div>
-            <span class="text-[9px] text-gray-400 font-sans uppercase">DNS Joven Libre</span>
-        </div>
-        <div class="space-y-6 text-blue-700">
-            <div>
-                <p class="text-gray-500 font-bold border-b text-[11px] mb-2 uppercase">Navegación</p>
-                <ul class="space-y-1">
-                    <li><a href="#" class="hover:underline">Portada</a></li>
-                    <li><a href="#" class="hover:underline">Actualidad</a></li>
-                    <li><a href="#" class="hover:underline">Páginas nuevas</a></li>
-                </ul>
-            </div>
-            <div>
-                <p class="text-gray-500 font-bold border-b text-[11px] mb-2 uppercase">Contribución</p>
-                <ul class="space-y-1">
-                    <li><a href="#" class="hover:underline">Ayuda</a></li>
-                    <li><a href="#" class="hover:underline">Donaciones</a></li>
-                </ul>
-            </div>
-        </div>
-    </aside>
+    <div class="max-w-4xl mx-auto relative">
+        <!-- Marca de agua -->
+        <div class="watermark text-lo">PROYECTO .LO</div>
 
-    <!-- Artículo Principal -->
-    <main class="wiki-content flex-1 bg-white">
-        <div class="flex justify-between items-center mb-4">
-            <span class="text-xs text-gray-400 italic">Artículo de la Red Global .lo</span>
-            <div class="text-xs space-x-2 text-blue-700 font-sans">
-                <a href="#" class="font-bold text-black">Leer</a>
-                <a href="#">Editar</a>
-                <a href="#">Ver historial</a>
-            </div>
-        </div>
-
-        <h1 class="text-4xl mb-2">DNS <span class="brand-dot">.</span><span class="brand-text">lo</span></h1>
-        <p class="text-sm italic text-gray-500 mb-6">De Wikipedia, la enciclopedia libre.</p>
-
-        <!-- Infobox -->
-        <table class="infobox border-collapse shadow-sm">
-            <thead>
-                <tr>
-                    <th colspan="2" class="bg-[#cedff2] p-2 text-center text-lg font-serif italic">
-                        <span class="brand-dot">.</span><span class="brand-text">lo</span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="2" class="text-center p-6 bg-white border-b">
-                        <div class="text-6xl font-bold tracking-tighter">
-                            <span class="brand-text">lo</span><span class="brand-dot">.</span>
-                        </div>
-                        <p class="text-[10px] mt-2 text-gray-400">Logotipo oficial del DNS</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="text-left p-2 border-b">Fecha de lanzamiento</th>
-                    <td class="p-2 border-b">4 de febrero de 2026</td>
-                </tr>
-                <tr>
-                    <th class="text-left p-2 border-b">Tipo de DNS</th>
-                    <td class="p-2 border-b">Abierto / Descentralizado</td>
-                </tr>
-                <tr>
-                    <th class="text-left p-2 border-b">Registrador</th>
-                    <td class="p-2 border-b">Red lo. Foundation</td>
-                </tr>
-                <tr>
-                    <th class="text-left p-2 border-b">Propósito</th>
-                    <td class="p-2 border-b">Mods, juegos, proyectos educativos</td>
-                </tr>
-                <tr>
-                    <th class="text-left p-2 border-b">Costo</th>
-                    <td class="p-2 border-b text-red-600 font-bold">0.00 USD (Gratis)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p class="mb-4">
-            El <b>DNS <span class="brand-dot">.</span>lo</b> es un sistema de nombres de dominio de nivel superior lanzado oficialmente el <b>4 de febrero de 2026</b>. Su arquitectura fue diseñada específicamente para resolver la necesidad de una identidad web gratuita para creadores menores de edad y desarrolladores de proyectos independientes como <i>mods</i> de videojuegos.
-        </p>
-
-        <div class="toc">
-            <p class="font-bold text-center mb-1">Sumario</p>
-            <ol class="list-decimal list-inside space-y-1">
-                <li><a href="#lanzamiento" class="text-blue-700 hover:underline">Lanzamiento oficial</a></li>
-                <li><a href="#tecnologia" class="text-blue-700 hover:underline">Tecnología y DNS</a></li>
-                <li><a href="#proyectos" class="text-blue-700 hover:underline">Proyectos y Mods</a></li>
-                <li><a href="#edad" class="text-blue-700 hover:underline">Acceso sin límite de edad</a></li>
-            </ol>
-        </div>
-
-        <h2 id="lanzamiento">Lanzamiento oficial</h2>
-        <p class="my-4">
-            El despliegue de la infraestructura comenzó el 4 de febrero de 2026 a las 00:00 UTC. El objetivo principal es eliminar la dependencia de tarjetas de crédito y verificaciones de identidad comerciales que impiden que los jóvenes tengan su propia dirección <i>tunombre.lo</i>.
-        </p>
-
-        <h2 id="tecnologia">Tecnología y DNS</h2>
-        <p class="my-4">
-            A diferencia de los dominios tradicionales, el sistema <b>DNS lo<span class="brand-dot">.</span></b> utiliza una red de resolución ultra-rápida. El protocolo permite:
-        </p>
-        <ul class="list-disc ml-8 my-4 space-y-2">
-            <li><b>Propagación instantánea:</b> Los cambios en los registros DNS se reflejan en segundos.</li>
-            <li><b>Privacidad total:</b> No se requieren datos personales para el registro.</li>
-            <li><b>Subdominios ilimitados:</b> Ideal para estructurar grandes proyectos de programación.</li>
-        </ul>
-
-        <h2 id="proyectos">Proyectos y Mods</h2>
-        <p class="my-4">
-            Desde su lanzamiento hoy, miles de usuarios han registrado nombres para alojar:
-        </p>
-        <ul class="list-disc ml-8 my-4">
-            <li>Servidores privados de videojuegos.</li>
-            <li>Documentación de <i>mods</i> y <i>plugins</i>.</li>
-            <li>Páginas personales de portafolio para jóvenes talentos.</li>
-        </ul>
-
-        <h2 id="edad">Acceso sin límite de edad</h2>
-        <p class="my-4">
-            La política fundamental de <b>lo<span class="brand-dot">.</span></b> establece que <b>no existe una edad mínima</b> para la creación. Esto permite que estudiantes de primaria y jóvenes de cualquier parte del mundo puedan aprender sobre redes y gestión de servidores DNS de forma práctica y real.
-        </p>
-
-        <div class="bg-white border-2 border-black p-6 my-10 rounded-lg shadow-[8px_8px_0px_0px_rgba(255,0,0,1)]">
-            <h3 class="text-2xl font-serif mb-4">Registro de Dominio <span class="brand-text">lo</span><span class="brand-dot">.</span></h3>
-            <p class="mb-4 text-sm">Disponible desde hoy, 4 de febrero de 2026. Ingresa el nombre que deseas para tu proyecto:</p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <input type="text" placeholder="ejemplo-mi-mod" class="border-2 border-gray-300 p-3 flex-1 focus:border-red-500 outline-none font-mono">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold"><span class="brand-dot">.</span>lo</span>
+        <!-- Encabezado del Documento -->
+        <div class="document-card p-8 mb-8">
+            <header class="text-center mb-10 border-b pb-8">
+                <div class="logo-container mb-4">
+                    <span class="dot">.</span><span class="text-lo">lo</span>
                 </div>
-                <button onclick="alert('Registro iniciado para el 4 de febrero de 2026. ¡Bienvenido a .lo!')" class="btn-register">
-                    CREAR GRATIS
-                </button>
-            </div>
+                <h1 class="text-2xl font-bold uppercase tracking-widest text-gray-600">Documento de Registro Oficial</h1>
+                <p class="text-sm text-gray-400 mt-2">Versión 1.0.4 - Protocolo de 15 Años</p>
+            </header>
+
+            <!-- Sección de Descripción -->
+            <section class="mb-10">
+                <h2 class="text-xl font-bold border-l-4 border-red-600 pl-4 mb-4">1. Descripción del Dominio</h2>
+                <p class="leading-relaxed text-gray-700">
+                    El dominio <strong>.lo</strong> es un gTLD (Dominio de Nivel Superior Genérico) independiente, creado bajo la premisa de libertad técnica y estabilidad a largo plazo. A diferencia de los registros comerciales, .lo garantiza una vigencia de <strong>15 años por registro</strong>, eliminando la incertidumbre de las renovaciones anuales y los aumentos de precio.
+                </p>
+            </section>
+
+            <!-- Sección de Propósito: MODS Y JUEGOS -->
+            <section class="mb-10 bg-gray-50 p-6 rounded-lg">
+                <h2 class="text-xl font-bold border-l-4 border-black pl-4 mb-4">2. Propósito: Comunidad de Mods y Juegos</h2>
+                <p class="mb-4 text-gray-700">
+                    Este dominio ha sido designado como la infraestructura base para creadores de contenido, modders y desarrolladores de juegos independientes. Es <strong>gratis</strong> para cualquier página que aloje:
+                </p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <li class="flex items-center">
+                        <span class="text-red-600 mr-2">✔</span> Repositorios de Mods de juegos
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-red-600 mr-2">✔</span> Herramientas de hacking ético y software
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-red-600 mr-2">✔</span> Guías de Speedrunning
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-red-600 mr-2">✔</span> Servidores de juegos privados
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Ficha Técnica -->
+            <section class="mb-10">
+                <h2 class="text-xl font-bold border-l-4 border-red-600 pl-4 mb-4">3. Especificaciones de Registro</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="p-3 border">Atributo</th>
+                                <th class="p-3 border">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-3 border font-semibold">Costo de Registro</td>
+                                <td class="p-3 border text-green-600 font-bold">$0.00 (Gratis)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border font-semibold">Periodo de Vigencia</td>
+                                <td class="p-3 border">15 Años (Inmutable)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border font-semibold">Público Objetivo</td>
+                                <td class="p-3 border">Modders y Desarrolladores</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border font-semibold">Estado de Red</td>
+                                <td class="p-3 border">Activo (DNS Alternativo)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Pie de Documento -->
+            <footer class="mt-12 pt-8 border-t text-center text-gray-500 text-sm">
+                <p>Propiedad del Proyecto .lo - Un concepto impulsado por la comunidad.</p>
+                <p class="mt-2 italic">"Estabilidad para la creación, libertad para el juego."</p>
+                <div class="mt-6 flex justify-center space-x-4">
+                    <span class="px-3 py-1 bg-black text-white rounded text-xs uppercase">Oficial</span>
+                    <span class="px-3 py-1 bg-red-600 text-white rounded text-xs uppercase">Verificado</span>
+                </div>
+            </footer>
         </div>
 
-        <div class="mt-16 pt-4 border-t border-gray-300 flex justify-between items-center text-[10px] text-gray-500">
-            <div>
-                Esta página fue creada el 4 de febrero de 2026.
-            </div>
-            <div class="flex space-x-4">
-                <a href="#" class="hover:underline">Privacidad</a>
-                <a href="#" class="hover:underline">Acerca de DNS .lo</a>
-                <a href="#" class="hover:underline">Desarrolladores</a>
-            </div>
+        <!-- Botón de Acción -->
+        <div class="text-center">
+            <a href="https://logos.fandom.com/es/wiki/.lo" target="_blank" class="inline-block bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition-colors">
+                Ver en Logopedia Wiki
+            </a>
         </div>
-    </main>
-</div>
-
-<footer class="bg-[#f6f6f6] py-10">
-    <div class="max-width-[1200px] mx-auto px-10 text-center opacity-40 grayscale">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png" alt="Wiki" class="h-12 mx-auto mb-4">
-        <p class="text-xs">Inspirado en el conocimiento libre.</p>
     </div>
-</footer>
 
 </body>
 </html>
-
-
